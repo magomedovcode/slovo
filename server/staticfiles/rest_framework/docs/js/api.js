@@ -71,21 +71,21 @@ $(function () {
   var $authSessionModal = $('#auth_session_modal')
 
   // Language Control
-  $('#language-control li').click(function (event) {
+  $('#language_content-control li').click(function (event) {
     event.preventDefault()
     var $languageMenuItem = $(this).find('a')
     var $languageControls = $(this).closest('ul').find('li')
     var $languageControlLinks = $languageControls.find('a')
     var language = $languageMenuItem.data('language')
 
-    $languageControlLinks.not('[data-language="' + language + '"]').parent().removeClass('active')
-    $languageControlLinks.filter('[data-language="' + language + '"]').parent().addClass('active')
+    $languageControlLinks.not('[data-language_content="' + language + '"]').parent().removeClass('active')
+    $languageControlLinks.filter('[data-language_content="' + language + '"]').parent().addClass('active')
 
-    $('#selected-language').text(language)
+    $('#selected-language_content').text(language)
 
     var $codeBlocks = $('pre.highlight')
-    $codeBlocks.not('[data-language="' + language + '"]').addClass('hide')
-    $codeBlocks.filter('[data-language="' + language + '"]').removeClass('hide')
+    $codeBlocks.not('[data-language_content="' + language + '"]').addClass('hide')
+    $codeBlocks.filter('[data-language_content="' + language + '"]').removeClass('hide')
   })
 
   // API Explorer

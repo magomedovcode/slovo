@@ -33,7 +33,8 @@ INSTALLED_APPS = [
     'apps.users',
     'apps.dictionary',
     'apps.news',
-    'apps.clubs'
+    'apps.clubs',
+    'apps.language'
 ]
 
 MIDDLEWARE = [
@@ -78,6 +79,8 @@ DATABASES = {
         'PORT': os.getenv('DB_PORT', '5432'),
     }
 }
+
+AUTH_USER_MODEL = 'users.User'
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -124,6 +127,10 @@ SIMPLE_JWT = {
     'BLACKLIST_AFTER_ROTATION': True,
     'AUTH_HEADER_TYPES': ('Bearer',),
 }
+
+YOOKASSA_ACCOUNT_ID = 'your_account_id'
+YOOKASSA_SECRET_KEY = 'your_secret_key'
+YOOKASSA_WEBHOOK_SECRET = 'your_webhook_secret'
 
 DATA_UPLOAD_MAX_MEMORY_SIZE = 104857600
 FILE_UPLOAD_MAX_MEMORY_SIZE = 104857600
